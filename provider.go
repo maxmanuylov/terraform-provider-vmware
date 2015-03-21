@@ -30,6 +30,7 @@ func Provider() terraform.ResourceProvider {
 				Type:        schema.TypeBool,
                 Optional: true,
                 Default: false,
+				DefaultFunc: schema.EnvDefaultFunc("VSPHERE_INSECURE", nil),
 				Description: "Do not check vCenter SSL certificate",
 			},
 		},
